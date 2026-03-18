@@ -1,0 +1,13 @@
+{
+  "firstName": "Sarah",
+  "lastName": "Chen",
+  "email": "sarah.chen@uciip.gov",
+  "department": "Cyber Crimes Division",
+  "role": "Senior Investigator",
+  "badgeNumber": "UC-4782",
+  "clearanceLevel": "Secret",
+  "joinDate": "2023-03-15",
+  "lastLogin": "2026-03-17T20:14:05.323Z",
+  "phone": "+1-555-0123",
+  "emergencyContact": "+1-555-0456"
+}
