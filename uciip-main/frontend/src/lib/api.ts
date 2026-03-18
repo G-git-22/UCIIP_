@@ -82,7 +82,12 @@ export async function getFilesFromBackend(): Promise<any> {
  * Generic fetch wrapper for future backend endpoints
  */
 export async function fetchFromBackend<T>(endpoint: string, options?: RequestInit): Promise<T> {
-  const url = endpoint.startsWith('/') ? `/api${endpoint}` : `/api/${endpoint}`;
+  // Support VITE_API_URL for production deployments (like Vercel to Render)
+  // If not set, it defaults to the local development proxy (/api)
+  const API_BASE = import.meta.env.VITE_API_URL || '';
+  const basePath = endpoint.startsWith('/') ? `/api${endpoint}` : `/api/${endpoint}`;
+  const url = `${API_BASE}${basePath}`;
+  
   try {
     const response = await fetch(url, options);
     if (!response.ok) {
